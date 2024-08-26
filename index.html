@@ -30,16 +30,17 @@
         background-color: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
       }
-      .meal-details {
+      .meal-card {
         background-color: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
       }
-      .meal-details h2 {
+      .meal-card h2 {
         color: #1e3a8a;
       }
       .meal-photo {
@@ -67,26 +68,19 @@
       .buy-checklist input[type="checkbox"] {
         margin-right: 10px;
       }
-      .past-meals {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
+      .meal-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
-      .past-meals h2 {
-        color: #1e3a8a;
-      }
-      .past-meal-item {
-        border-bottom: 1px solid #e0e0e0;
-        padding: 10px 0;
+      @media (min-width: 768px) {
+        .meal-grid {
+          grid-template-columns: 1fr 1fr;
+        }
       }
       .current-meal {
         background-color: #e6f7ff;
         border: 2px solid #1e90ff;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
       }
       .current-meal h2 {
         color: #1e90ff;
@@ -104,6 +98,10 @@
       .event-icon {
         margin-right: 5px;
       }
+      .past-meal-item {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 0;
+      }
     </style>
   </head>
   <body>
@@ -120,41 +118,43 @@
       <div class="container">
         <h1 property="pageHeader">MealPlan Calendar</h1>
         <div id="calendar"></div>
-        <div class="current-meal" id="current-meal" mv-list>
-          <h2 property="currentMealHeader">Current Meal</h2>
-          <div id="current-meal-info" mv-list-item property="currentMeal">
-            <h3 property="title">Title:</h3>
-            <p><strong>Description:</strong> <span property="description"></span></p>
-            <img property="photo" class="meal-photo" />
-            <h4>Ingredients:</h4>
-            <ul class="ingredients-list" mv-list>
-              <li mv-list-item="mealIngredients">
-                <span property="ingredient"></span>
-              </li>
-            </ul>
-            <h4>Recipe:</h4>
-            <ol class="recipe-steps" mv-list>
-              <li mv-list-item="mealSteps">
-                <span property="step"></span>
-              </li>
-            </ol>
-            <h4>Shopping Date:</h4>
-            <p property="shopDate"></p>
-            <h4>Preparation Date:</h4>
-            <p property="prepDate"></p>
-            <h4>Shopping List:</h4>
-            <ul class="buy-checklist" mv-list>
-              <li mv-list-item="currentMealShoppingList">
-                <input type="checkbox" id="[ingredient]" />
-                <label for="[ingredient]" property="ingredient"></label>
-              </li>
-            </ul>
+        <div class="meal-grid">
+          <div class="meal-card current-meal" id="current-meal" mv-list>
+            <h2 property="currentMealHeader">Current Meal</h2>
+            <div id="current-meal-info" mv-list-item property="currentMeal">
+              <h3 property="title">Title:</h3>
+              <p><strong>Description:</strong> <span property="description"></span></p>
+              <img property="photo" class="meal-photo" />
+              <h4>Ingredients:</h4>
+              <ul class="ingredients-list" mv-list>
+                <li mv-list-item="mealIngredients">
+                  <span property="ingredient"></span>
+                </li>
+              </ul>
+              <h4>Recipe:</h4>
+              <ol class="recipe-steps" mv-list>
+                <li mv-list-item="mealSteps">
+                  <span property="step"></span>
+                </li>
+              </ol>
+              <h4>Shopping Date:</h4>
+              <p property="shopDate"></p>
+              <h4>Preparation Date:</h4>
+              <p property="prepDate"></p>
+              <h4>Shopping List:</h4>
+              <ul class="buy-checklist" mv-list>
+                <li mv-list-item="currentMealShoppingList">
+                  <input type="checkbox" id="[ingredient]" />
+                  <label for="[ingredient]" property="ingredient"></label>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="past-meals">
-          <h2 property="pastMealsHeader">Past Meals</h2>
-          <div id="past-meals-list" mv-list mv-accepts="">
-            <div class="past-meal-item" mv-list-item="pastMeals"><strong property="name"></strong> - <span property="date"></span></div>
+          <div class="meal-card past-meals">
+            <h2 property="pastMealsHeader">Past Meals</h2>
+            <div id="past-meals-list" mv-list mv-accepts="currentMeal">
+              <div class="past-meal-item" mv-list-item="pastMeals"><strong property="name"></strong> - <span property="date"></span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -166,39 +166,41 @@
         "currentMealHeader": "Current Meal",
         "mealDetailsHeader": "Meal Details",
         "pastMealsHeader": "Past Meals",
-        "currentMeal": {
-          "title": "Grilled Lemon Herb Salmon",
-          "description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
-          "photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
-          "mealIngredients": [
-            { "ingredient": "4 salmon fillets" },
-            { "ingredient": "2 lemons" },
-            { "ingredient": "4 cloves garlic, minced" },
-            { "ingredient": "2 tbsp fresh dill, chopped" },
-            { "ingredient": "2 tbsp fresh parsley, chopped" },
-            { "ingredient": "2 tbsp olive oil" },
-            { "ingredient": "Salt and pepper to taste" }
-          ],
-          "mealSteps": [
-            { "step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil." },
-            { "step": "Season salmon fillets with salt and pepper." },
-            { "step": "Marinate the salmon in the herb mixture for 30 minutes." },
-            { "step": "Preheat grill to medium-high heat." },
-            { "step": "Grill salmon for 4-5 minutes per side, or until cooked through." },
-            { "step": "Serve with lemon wedges and extra herbs if desired." }
-          ],
-          "prepDate": "2023-05-20",
-          "shopDate": "2023-05-19",
-          "currentMealShoppingList": [
-            { "ingredient": "4 salmon fillets" },
-            { "ingredient": "2 lemons" },
-            { "ingredient": "4 cloves garlic" },
-            { "ingredient": "Fresh dill" },
-            { "ingredient": "Fresh parsley" },
-            { "ingredient": "Olive oil" },
-            { "ingredient": "Salt and pepper" }
-          ]
-        },
+        "currentMeal": [
+          {
+            "title": "Grilled Lemon Herb Salmon",
+            "description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
+            "photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
+            "mealIngredients": [
+              { "ingredient": "4 salmon fillets" },
+              { "ingredient": "2 lemons" },
+              { "ingredient": "4 cloves garlic, minced" },
+              { "ingredient": "2 tbsp fresh dill, chopped" },
+              { "ingredient": "2 tbsp fresh parsley, chopped" },
+              { "ingredient": "2 tbsp olive oil" },
+              { "ingredient": "Salt and pepper to taste" }
+            ],
+            "mealSteps": [
+              { "step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil." },
+              { "step": "Season salmon fillets with salt and pepper." },
+              { "step": "Marinate the salmon in the herb mixture for 30 minutes." },
+              { "step": "Preheat grill to medium-high heat." },
+              { "step": "Grill salmon for 4-5 minutes per side, or until cooked through." },
+              { "step": "Serve with lemon wedges and extra herbs if desired." }
+            ],
+            "prepDate": "2023-05-20",
+            "shopDate": "2023-05-19",
+            "currentMealShoppingList": [
+              { "ingredient": "4 salmon fillets" },
+              { "ingredient": "2 lemons" },
+              { "ingredient": "4 cloves garlic" },
+              { "ingredient": "Fresh dill" },
+              { "ingredient": "Fresh parsley" },
+              { "ingredient": "Olive oil" },
+              { "ingredient": "Salt and pepper" }
+            ]
+          }
+        ],
         "pastMeals": [
           { "name": "Grilled Salmon", "date": "2023-05-10" },
           { "name": "Vegetable Lasagna", "date": "2023-05-05" },
