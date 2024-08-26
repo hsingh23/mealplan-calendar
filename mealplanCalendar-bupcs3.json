@@ -1,156 +1,157 @@
 {
-  "pageHeader": "MealPlan Calendar",
-  "currentMealHeader": "Current Meal",
-  "mealDetailsHeader": "Meal Details",
-  "pastMealsHeader": "Past Meals",
-  "currentMeal": [
-    {
-      "title": "Grilled Lemon Herb Salmon",
-      "description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
-      "photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
-      "mealIngredients": [
-        {
-          "ingredient": "4 salmon fillets"
-        },
-        {
-          "ingredient": "2 lemons"
-        },
-        {
-          "ingredient": "4 cloves garlic, minced"
-        },
-        {
-          "ingredient": "2 tbsp fresh dill, chopped"
-        },
-        {
-          "ingredient": "2 tbsp fresh parsley, chopped"
-        },
-        {
-          "ingredient": "2 tbsp olive oil"
-        },
-        {
-          "ingredient": "Salt and pepper to taste"
-        }
-      ],
-      "mealSteps": [
-        {
-          "step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil."
-        },
-        {
-          "step": "Season salmon fillets with salt and pepper."
-        },
-        {
-          "step": "Marinate the salmon in the herb mixture for 30 minutes."
-        },
-        {
-          "step": "Preheat grill to medium-high heat."
-        },
-        {
-          "step": "Grill salmon for 4-5 minutes per side, or until cooked through."
-        },
-        {
-          "step": "Serve with lemon wedges and extra herbs if desired."
-        }
-      ],
-      "prepDate": "2024-08-26",
-      "shopDate": "2024-08-25",
-      "currentMealShoppingList": [
-        {
-          "ingredient": "4 salmon fillets"
-        },
-        {
-          "ingredient": "2 lemons"
-        },
-        {
-          "ingredient": "4 cloves garlic"
-        },
-        {
-          "ingredient": "Fresh dill"
-        },
-        {
-          "ingredient": "Fresh parsley"
-        },
-        {
-          "ingredient": "Olive oil"
-        },
-        {
-          "ingredient": "Salt and pepper"
-        }
-      ]
-    }
-  ],
-  "pastMeals": [
-    {
-      "title": "Grilled Lemon Herb Salmon",
-      "description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
-      "photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
-      "mealIngredients": [
-        {
-          "ingredient": "4 salmon fillets"
-        },
-        {
-          "ingredient": "2 lemons"
-        },
-        {
-          "ingredient": "4 cloves garlic, minced"
-        },
-        {
-          "ingredient": "2 tbsp fresh dill, chopped"
-        },
-        {
-          "ingredient": "2 tbsp fresh parsley, chopped"
-        },
-        {
-          "ingredient": "2 tbsp olive oil"
-        },
-        {
-          "ingredient": "Salt and pepper to taste"
-        }
-      ],
-      "mealSteps": [
-        {
-          "step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil."
-        },
-        {
-          "step": "Season salmon fillets with salt and pepper."
-        },
-        {
-          "step": "Marinate the salmon in the herb mixture for 30 minutes."
-        },
-        {
-          "step": "Preheat grill to medium-high heat."
-        },
-        {
-          "step": "Grill salmon for 4-5 minutes per side, or until cooked through."
-        },
-        {
-          "step": "Serve with lemon wedges and extra herbs if desired."
-        }
-      ],
-      "prepDate": "2024-08-26",
-      "shopDate": "2024-08-25",
-      "currentMealShoppingList": [
-        {
-          "ingredient": "4 salmon fillets"
-        },
-        {
-          "ingredient": "2 lemons"
-        },
-        {
-          "ingredient": "4 cloves garlic"
-        },
-        {
-          "ingredient": "Fresh dill"
-        },
-        {
-          "ingredient": "Fresh parsley"
-        },
-        {
-          "ingredient": "Olive oil"
-        },
-        {
-          "ingredient": "Salt and pepper"
-        }
-      ]
-    }
-  ]
+	"pageHeader": "MealPlan Calendar",
+	"currentMealHeader": "Current Meal",
+	"mealDetailsHeader": "Meal Details",
+	"pastMealsHeader": "Past Meals",
+	"currentMeal": [
+		{
+			"title": "Grilled Lemon Herb Salmon",
+			"description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
+			"photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
+			"mealIngredients": [
+				{
+					"ingredient": "4 salmon fillets"
+				},
+				{
+					"ingredient": "2 lemons"
+				},
+				{
+					"ingredient": "4 cloves garlic, minced"
+				},
+				{
+					"ingredient": "2 tbsp fresh dill, chopped"
+				},
+				{
+					"ingredient": "2 tbsp fresh parsley, chopped"
+				},
+				{
+					"ingredient": "2 tbsp olive oil"
+				},
+				{
+					"ingredient": "Salt and pepper to taste"
+				}
+			],
+			"mealSteps": [
+				{
+					"step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil."
+				},
+				{
+					"step": "Season salmon fillets with salt and pepper."
+				},
+				{
+					"step": "Marinate the salmon in the herb mixture for 30 minutes."
+				},
+				{
+					"step": "Preheat grill to medium-high heat."
+				},
+				{
+					"step": "Grill salmon for 4-5 minutes per side, or until cooked through."
+				},
+				{
+					"step": "Serve with lemon wedges and extra herbs if desired."
+				}
+			],
+			"prepDate": "2024-08-26",
+			"shopDate": "2024-08-25",
+			"currentMealShoppingList": [
+				{
+					"ingredient": "4 salmon fillets"
+				},
+				{
+					"ingredient": "2 lemons"
+				},
+				{
+					"ingredient": "4 cloves garlic"
+				},
+				{
+					"ingredient": "Fresh dill"
+				},
+				{
+					"ingredient": "Fresh parsley"
+				},
+				{
+					"ingredient": "Olive oil"
+				},
+				{
+					"ingredient": "Salt and pepper"
+				}
+			]
+		}
+	],
+	"pastMeals": [
+		{
+			"title": "Grilled Lemon Herb Salmon",
+			"description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
+			"photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
+			"mealIngredients": [
+				{
+					"ingredient": "4 salmon fillets"
+				},
+				{
+					"ingredient": "2 lemons"
+				},
+				{
+					"ingredient": "4 cloves garlic, minced"
+				},
+				{
+					"ingredient": "2 tbsp fresh dill, chopped"
+				},
+				{
+					"ingredient": "2 tbsp fresh parsley, chopped"
+				},
+				{
+					"ingredient": "2 tbsp olive oil"
+				},
+				{
+					"ingredient": "Salt and pepper to taste"
+				}
+			],
+			"mealSteps": [
+				{
+					"step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil."
+				},
+				{
+					"step": "Season salmon fillets with salt and pepper."
+				},
+				{
+					"step": "Marinate the salmon in the herb mixture for 30 minutes."
+				},
+				{
+					"step": "Preheat grill to medium-high heat."
+				},
+				{
+					"step": "Grill salmon for 4-5 minutes per side, or until cooked through."
+				},
+				{
+					"step": "Serve with lemon wedges and extra herbs if desired."
+				}
+			],
+			"prepDate": "2024-08-26",
+			"shopDate": "2024-08-25",
+			"currentMealShoppingList": [
+				{
+					"ingredient": "4 salmon fillets"
+				},
+				{
+					"ingredient": "2 lemons"
+				},
+				{
+					"ingredient": "4 cloves garlic"
+				},
+				{
+					"ingredient": "Fresh dill"
+				},
+				{
+					"ingredient": "Fresh parsley"
+				},
+				{
+					"ingredient": "Olive oil"
+				},
+				{
+					"ingredient": "Salt and pepper"
+				}
+			],
+			"name": "Something"
+		}
+	]
 }
