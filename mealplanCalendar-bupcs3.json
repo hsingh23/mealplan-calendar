@@ -1,80 +1,193 @@
 {
-  "pageHeader": "MealPlan Calendar",
-  "currentMealHeader": "Current Meal",
-  "mealDetailsHeader": "Meal Details",
-  "pastMealsHeader": "Past Meals",
-  "meals": [
-    {
-      "title": "Grilled Lemon Herb Salmon",
-      "description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
-      "photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
-      "ingredients": [
-        "4 salmon fillets",
-        "2 lemons",
-        "4 cloves garlic, minced",
-        "2 tbsp fresh dill, chopped",
-        "2 tbsp fresh parsley, chopped",
-        "2 tbsp olive oil",
-        "Salt and pepper to taste"
-      ],
-      "steps": [
-        "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil.",
-        "Season salmon fillets with salt and pepper.",
-        "Marinate the salmon in the herb mixture for 30 minutes.",
-        "Preheat grill to medium-high heat.",
-        "Grill salmon for 4-5 minutes per side, or until cooked through.",
-        "Serve with lemon wedges and extra herbs if desired."
-      ],
-      "shopDate": "2023-08-29",
-      "prepDate": "2023-08-30",
-      "cookDate": "2023-08-30",
-      "shoppingList": ["4 salmon fillets", "2 lemons", "4 cloves garlic", "Fresh dill", "Fresh parsley", "Olive oil", "Salt and pepper"]
-    },
-    {
-      "title": "Vegetable Lasagna",
-      "description": "A hearty vegetarian lasagna packed with fresh vegetables and creamy cheese.",
-      "photo": "https://mealplan-calendar.com/images/vegetable-lasagna.jpg",
-      "ingredients": [
-        "Lasagna noodles",
-        "2 zucchini, sliced",
-        "1 eggplant, sliced",
-        "1 red bell pepper, chopped",
-        "1 onion, diced",
-        "3 cloves garlic, minced",
-        "1 can crushed tomatoes",
-        "15 oz ricotta cheese",
-        "2 cups shredded mozzarella",
-        "1/2 cup grated Parmesan",
-        "2 eggs",
-        "Italian herbs",
-        "Salt and pepper"
-      ],
-      "steps": [
-        "Preheat oven to 375°F (190°C).",
-        "Sauté vegetables with garlic until tender.",
-        "Mix ricotta, 1 cup mozzarella, eggs, and herbs.",
-        "Layer lasagna: sauce, noodles, vegetables, cheese mixture. Repeat.",
-        "Top with remaining sauce and mozzarella.",
-        "Bake for 45 minutes. Let stand before serving."
-      ],
-      "shopDate": "2024-08-03",
-      "prepDate": "2024-08-04",
-      "cookDate": "2024-08-05",
-      "shoppingList": [
-        "Lasagna noodles",
-        "2 zucchini",
-        "1 eggplant",
-        "1 red bell pepper",
-        "1 onion",
-        "3 cloves garlic",
-        "1 can crushed tomatoes",
-        "15 oz ricotta cheese",
-        "2 cups shredded mozzarella",
-        "1/2 cup grated Parmesan",
-        "2 eggs",
-        "Italian herbs",
-        "Salt and pepper"
-      ]
-    }
-  ]
+	"pageHeader": "MealPlan Calendar",
+	"currentMealHeader": "Current Meal",
+	"mealDetailsHeader": "Meal Details",
+	"pastMealsHeader": "Past Meals",
+	"meals": [
+		{
+			"title": "Grilled Lemon Herb Salmon",
+			"description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
+			"photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
+			"ingredients": [
+				{
+					"ingredient": "4 salmon fillets"
+				},
+				{
+					"ingredient": "2 lemons"
+				},
+				{
+					"ingredient": "4 cloves garlic, minced"
+				},
+				{
+					"ingredient": "2 tbsp fresh dill, chopped"
+				},
+				{
+					"ingredient": "2 tbsp fresh parsley, chopped"
+				},
+				{
+					"ingredient": "2 tbsp olive oil"
+				},
+				{
+					"ingredient": "Salt and pepper to taste"
+				}
+			],
+			"steps": [
+				{
+					"step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil."
+				},
+				{
+					"step": "Season salmon fillets with salt and pepper."
+				},
+				{
+					"step": "Marinate the salmon in the herb mixture for 30 minutes."
+				},
+				{
+					"step": "Preheat grill to medium-high heat."
+				},
+				{
+					"step": "Grill salmon for 4-5 minutes per side, or until cooked through."
+				},
+				{
+					"step": "Serve with lemon wedges and extra herbs if desired."
+				}
+			],
+			"shopDate": "2023-08-29",
+			"prepDate": "2023-08-30",
+			"cookDate": "2023-08-30",
+			"shoppingList": [
+				{
+					"ingredient": "4 salmon fillets"
+				},
+				{
+					"ingredient": "2 lemons"
+				},
+				{
+					"ingredient": "4 cloves garlic"
+				},
+				{
+					"ingredient": "Fresh dill"
+				},
+				{
+					"ingredient": "Fresh parsley"
+				},
+				{
+					"ingredient": "Olive oil"
+				},
+				{
+					"ingredient": "Salt and pepper"
+				}
+			]
+		},
+		{
+			"title": "Vegetable Lasagna",
+			"description": "A hearty vegetarian lasagna packed with fresh vegetables and creamy cheese.",
+			"photo": "https://mealplan-calendar.com/images/vegetable-lasagna.jpg",
+			"ingredients": [
+				{
+					"ingredient": "Lasagna noodles"
+				},
+				{
+					"ingredient": "2 zucchini, sliced"
+				},
+				{
+					"ingredient": "1 eggplant, sliced"
+				},
+				{
+					"ingredient": "1 red bell pepper, chopped"
+				},
+				{
+					"ingredient": "1 onion, diced"
+				},
+				{
+					"ingredient": "3 cloves garlic, minced"
+				},
+				{
+					"ingredient": "1 can crushed tomatoes"
+				},
+				{
+					"ingredient": "15 oz ricotta cheese"
+				},
+				{
+					"ingredient": "2 cups shredded mozzarella"
+				},
+				{
+					"ingredient": "1/2 cup grated Parmesan"
+				},
+				{
+					"ingredient": "2 eggs"
+				},
+				{
+					"ingredient": "Italian herbs"
+				},
+				{
+					"ingredient": "Salt and pepper"
+				}
+			],
+			"steps": [
+				{
+					"step": "Preheat oven to 375°F (190°C)."
+				},
+				{
+					"step": "Sauté vegetables with garlic until tender."
+				},
+				{
+					"step": "Mix ricotta, 1 cup mozzarella, eggs, and herbs."
+				},
+				{
+					"step": "Layer lasagna: sauce, noodles, vegetables, cheese mixture. Repeat."
+				},
+				{
+					"step": "Top with remaining sauce and mozzarella."
+				},
+				{
+					"step": "Bake for 45 minutes. Let stand before serving."
+				}
+			],
+			"shopDate": "2024-08-03",
+			"prepDate": "2024-08-04",
+			"cookDate": "2024-08-05",
+			"shoppingList": [
+				{
+					"ingredient": "Lasagna noodles"
+				},
+				{
+					"ingredient": "2 zucchini"
+				},
+				{
+					"ingredient": "1 eggplant"
+				},
+				{
+					"ingredient": "1 red bell pepper"
+				},
+				{
+					"ingredient": "1 onion"
+				},
+				{
+					"ingredient": "3 cloves garlic"
+				},
+				{
+					"ingredient": "1 can crushed tomatoes"
+				},
+				{
+					"ingredient": "15 oz ricotta cheese"
+				},
+				{
+					"ingredient": "2 cups shredded mozzarella"
+				},
+				{
+					"ingredient": "1/2 cup grated Parmesan"
+				},
+				{
+					"ingredient": "2 eggs"
+				},
+				{
+					"ingredient": "Italian herbs"
+				},
+				{
+					"ingredient": "Salt and pepper"
+				}
+			]
+		}
+	],
+	"futureMealsHeader": "Future Meals"
 }
