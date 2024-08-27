@@ -84,17 +84,7 @@
 				]
 			}
 		],
-		[
-			{
-				"title": "asdf",
-				"cookDate": "asdf"
-			},
-			{
-				"title": "sadf",
-				"cookDate": "dsf"
-			},
-			{}
-		]
+		[]
 	],
 	"futureMealsHeader": "Future Meals"
 }
