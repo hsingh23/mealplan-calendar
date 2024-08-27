@@ -108,10 +108,10 @@
     <div
       mv-app="mealplanCalendar-bupcs3"
       mv-plugins="tinymce"
-      mv-init="#initial"
       mv-storage="https://github.com/hsingh23/mealplan-calendar"
       mv-bar="no-login"
       autosave="3"
+      mv-init="#initial"
       mv-upload-path="pictures"
       class="mv-autoedit"
     >
@@ -119,167 +119,185 @@
         <h1 property="pageHeader">MealPlan Calendar</h1>
         <div id="calendar"></div>
         <div class="meal-grid">
-          <div class="meal-card current-meal" id="current-meal" mv-list>
-            <h2 property="currentMealHeader">Current Meal</h2>
-            <div id="current-meal-info" mv-list-item property="currentMeal">
-              <h3 property="title">Title:</h3>
-              <p><strong>Description:</strong> <span property="description"></span></p>
-              <img property="photo" class="meal-photo" />
-              <h4>Ingredients:</h4>
-              <ul class="ingredients-list" mv-list>
-                <li mv-list-item="mealIngredients">
-                  <span property="ingredient"></span>
-                </li>
-              </ul>
-              <h4>Recipe:</h4>
-              <ol class="recipe-steps" mv-list>
-                <li mv-list-item="mealSteps">
-                  <span property="step"></span>
-                </li>
-              </ol>
-              <h4>Shopping Date:</h4>
-              <input type="date" property="shopDate"></input>
-              <h4>Preparation Date:</h4>
-              <input type="date" property="prepDate"></input>
-              <h4>Shopping List:</h4>
-              <ul class="buy-checklist" mv-list>
-                <li mv-list-item="currentMealShoppingList">
-                  <input type="checkbox" id="[ingredient]" />
-                  <label for="[ingredient]" property="ingredient"></label>
-                </li>
-              </ul>
+          <div class="meal-card future-meals">
+            <h2 property="futureMealsHeader">Future Meals</h2>
+            <div id="future-meals-list" mv-list>
+              <div mv-list-item="meals">
+                <h3 property="title"></h3>
+                <p><strong>Description:</strong> <span property="description"></span></p>
+                <img property="photo" class="meal-photo" />
+                <h4>Ingredients:</h4>
+                <ul class="ingredients-list" mv-list>
+                  <li mv-list-item="ingredients" property="ingredient"></li>
+                </ul>
+                <h4>Recipe:</h4>
+                <ol class="recipe-steps" mv-list>
+                  <li mv-list-item="steps" property="step"></li>
+                </ol>
+                <h4>Shopping Date:</h4>
+                <input type="date" property="shopDate" />
+                <h4>Preparation Date:</h4>
+                <input type="date" property="prepDate" />
+                <h4>Cooking Date:</h4>
+                <input type="date" property="cookDate" />
+                <h4>Shopping List:</h4>
+                <ul class="buy-checklist" mv-list>
+                  <li mv-list-item="shoppingList">
+                    <input type="checkbox" id="[ingredient]" />
+                    <label for="[ingredient]" property="ingredient"></label>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="meal-card past-meals">
             <h2 property="pastMealsHeader">Past Meals</h2>
-            <div id="past-meals-list" mv-list mv-accepts="currentMeal">
-              <div class="past-meal-item" mv-list-item="pastMeals"><strong property="name"></strong> - <span property="date"></span></div>
+            <div id="past-meals-list" mv-list>
+              <div class="past-meal-item" mv-list-item="meals" mv-if="(prepDate <= $today) && (cookDate <= $today)">
+                <strong property="title"></strong> - Cooked on <span property="cookDate"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <script type="application/json" id="initial">
       {
         "pageHeader": "MealPlan Calendar",
-        "currentMealHeader": "Current Meal",
-        "mealDetailsHeader": "Meal Details",
+        "futureMealsHeader": "Future Meals",
         "pastMealsHeader": "Past Meals",
-        "currentMeal": [
+        "meals": [
           {
             "title": "Grilled Lemon Herb Salmon",
             "description": "Delicious and healthy grilled salmon with a zesty lemon herb marinade.",
             "photo": "https://mealplan-calendar.com/images/lemon-herb-salmon.jpg",
-            "mealIngredients": [
-              { "ingredient": "4 salmon fillets" },
-              { "ingredient": "2 lemons" },
-              { "ingredient": "4 cloves garlic, minced" },
-              { "ingredient": "2 tbsp fresh dill, chopped" },
-              { "ingredient": "2 tbsp fresh parsley, chopped" },
-              { "ingredient": "2 tbsp olive oil" },
-              { "ingredient": "Salt and pepper to taste" }
+            "ingredients": [
+              "4 salmon fillets",
+              "2 lemons",
+              "4 cloves garlic, minced",
+              "2 tbsp fresh dill, chopped",
+              "2 tbsp fresh parsley, chopped",
+              "2 tbsp olive oil",
+              "Salt and pepper to taste"
             ],
-            "mealSteps": [
-              { "step": "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil." },
-              { "step": "Season salmon fillets with salt and pepper." },
-              { "step": "Marinate the salmon in the herb mixture for 30 minutes." },
-              { "step": "Preheat grill to medium-high heat." },
-              { "step": "Grill salmon for 4-5 minutes per side, or until cooked through." },
-              { "step": "Serve with lemon wedges and extra herbs if desired." }
+            "steps": [
+              "In a bowl, mix lemon juice, minced garlic, dill, parsley, and olive oil.",
+              "Season salmon fillets with salt and pepper.",
+              "Marinate the salmon in the herb mixture for 30 minutes.",
+              "Preheat grill to medium-high heat.",
+              "Grill salmon for 4-5 minutes per side, or until cooked through.",
+              "Serve with lemon wedges and extra herbs if desired."
             ],
-            "prepDate": "2023-05-20",
-            "shopDate": "2023-05-19",
-            "currentMealShoppingList": [
-              { "ingredient": "4 salmon fillets" },
-              { "ingredient": "2 lemons" },
-              { "ingredient": "4 cloves garlic" },
-              { "ingredient": "Fresh dill" },
-              { "ingredient": "Fresh parsley" },
-              { "ingredient": "Olive oil" },
-              { "ingredient": "Salt and pepper" }
+            "shopDate": "2023-08-29",
+            "prepDate": "2023-08-30",
+            "cookDate": "2023-08-30",
+            "shoppingList": ["4 salmon fillets", "2 lemons", "4 cloves garlic", "Fresh dill", "Fresh parsley", "Olive oil", "Salt and pepper"]
+          },
+          {
+            "title": "Vegetable Lasagna",
+            "description": "A hearty vegetarian lasagna packed with fresh vegetables and creamy cheese.",
+            "photo": "https://mealplan-calendar.com/images/vegetable-lasagna.jpg",
+            "ingredients": [
+              "Lasagna noodles",
+              "2 zucchini, sliced",
+              "1 eggplant, sliced",
+              "1 red bell pepper, chopped",
+              "1 onion, diced",
+              "3 cloves garlic, minced",
+              "1 can crushed tomatoes",
+              "15 oz ricotta cheese",
+              "2 cups shredded mozzarella",
+              "1/2 cup grated Parmesan",
+              "2 eggs",
+              "Italian herbs",
+              "Salt and pepper"
+            ],
+            "steps": [
+              "Preheat oven to 375°F (190°C).",
+              "Sauté vegetables with garlic until tender.",
+              "Mix ricotta, 1 cup mozzarella, eggs, and herbs.",
+              "Layer lasagna: sauce, noodles, vegetables, cheese mixture. Repeat.",
+              "Top with remaining sauce and mozzarella.",
+              "Bake for 45 minutes. Let stand before serving."
+            ],
+            "shopDate": "2023-05-03",
+            "prepDate": "2023-05-04",
+            "cookDate": "2023-05-05",
+            "shoppingList": [
+              "Lasagna noodles",
+              "2 zucchini",
+              "1 eggplant",
+              "1 red bell pepper",
+              "1 onion",
+              "3 cloves garlic",
+              "1 can crushed tomatoes",
+              "15 oz ricotta cheese",
+              "2 cups shredded mozzarella",
+              "1/2 cup grated Parmesan",
+              "2 eggs",
+              "Italian herbs",
+              "Salt and pepper"
             ]
           }
-        ],
-        "pastMeals": [
-          { "name": "Grilled Salmon", "date": "2023-05-10" },
-          { "name": "Vegetable Lasagna", "date": "2023-05-05" },
-          { "name": "Chicken Curry", "date": "2023-04-30" }
         ]
       }
     </script>
-
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("mv-load", function () {
         var calendarEl = document.getElementById("calendar");
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: "dayGridMonth",
-          events: [
-            {
-              title: "Shop: Spaghetti Bolognese",
-              start: "2023-05-14",
-              classNames: ["shop-event"],
-              extendedProps: {
-                icon: "fas fa-shopping-cart",
-                mealName: "Spaghetti Bolognese",
-                type: "shop",
-              },
-            },
-            {
-              title: "Prep: Spaghetti Bolognese",
-              start: "2023-05-15",
-              classNames: ["prep-event"],
-              extendedProps: {
-                icon: "fas fa-utensils",
-                mealName: "Spaghetti Bolognese",
-                type: "prep",
-                description: "Classic Italian pasta dish with rich meat sauce.",
-                photo: "https://mealplan-calendar.com/images/spaghetti-bolognese.jpg",
-                ingredients: ["500g spaghetti", "400g ground beef", "400g crushed tomatoes", "1 onion", "2 cloves garlic", "Olive oil", "Salt", "Pepper", "Parmesan cheese"],
-                recipe: [
-                  "Boil spaghetti according to package instructions.",
-                  "In a large pan, sauté chopped onion and garlic in olive oil.",
-                  "Add ground beef and cook until browned.",
-                  "Add crushed tomatoes and simmer for 20 minutes.",
-                  "Season with salt and pepper to taste.",
-                  "Serve sauce over spaghetti and top with grated Parmesan.",
-                ],
-                shopDate: "2023-05-14",
-              },
-            },
-            {
-              title: "Shop: Chicken Stir Fry",
-              start: "2023-05-17",
-              classNames: ["shop-event"],
-              extendedProps: {
-                icon: "fas fa-shopping-cart",
-                mealName: "Chicken Stir Fry",
-                type: "shop",
-              },
-            },
-            {
-              title: "Prep: Chicken Stir Fry",
-              start: "2023-05-18",
-              classNames: ["prep-event"],
-              extendedProps: {
-                icon: "fas fa-utensils",
-                mealName: "Chicken Stir Fry",
-                type: "prep",
-                description: "Quick and healthy vegetable stir fry with tender chicken pieces.",
-                photo: "https://mealplan-calendar.com/images/chicken-stir-fry.jpg",
-                ingredients: ["500g chicken breast", "Mixed vegetables (bell peppers, broccoli, carrots)", "Soy sauce", "Ginger", "Garlic", "Vegetable oil", "Rice"],
-                recipe: [
-                  "Cut chicken into bite-sized pieces.",
-                  "Heat oil in a wok or large frying pan.",
-                  "Stir-fry chicken until cooked through.",
-                  "Add vegetables and stir-fry for 3-4 minutes.",
-                  "Add minced ginger, garlic, and soy sauce.",
-                  "Serve hot over steamed rice.",
-                ],
-                shopDate: "2023-05-17",
-              },
-            },
-          ],
+          events: function (fetchInfo, successCallback, failureCallback) {
+            var events = [];
+            var meals = Mavo.all[0]?.root.liveData.data.meals;
+
+            meals.forEach(function (meal) {
+              if (meal.shopDate) {
+                events.push({
+                  title: "Shop: " + meal.title,
+                  start: meal.shopDate,
+                  classNames: ["shop-event"],
+                  extendedProps: {
+                    icon: "fas fa-shopping-cart",
+                    mealName: meal.title,
+                    type: "shop",
+                  },
+                });
+              }
+              if (meal.prepDate) {
+                events.push({
+                  title: "Prep: " + meal.title,
+                  start: meal.prepDate,
+                  classNames: ["prep-event"],
+                  extendedProps: {
+                    icon: "fas fa-utensils",
+                    mealName: meal.title,
+                    type: "prep",
+                    description: meal.description,
+                    photo: meal.photo,
+                    ingredients: meal.ingredients,
+                    recipe: meal.steps,
+                    shopDate: meal.shopDate,
+                    cookDate: meal.cookDate,
+                  },
+                });
+              }
+              if (meal.cookDate) {
+                events.push({
+                  title: "Cook: " + meal.title,
+                  start: meal.cookDate,
+                  classNames: ["cook-event"],
+                  extendedProps: {
+                    icon: "fas fa-fire",
+                    mealName: meal.title,
+                    type: "cook",
+                  },
+                });
+              }
+            });
+
+            successCallback(events);
+          },
           eventContent: function (arg) {
             let icon = document.createElement("i");
             icon.className = arg.event.extendedProps.icon + " event-icon";
@@ -302,35 +320,37 @@
           var mealInfo = document.getElementById("meal-info");
           var meal = event.extendedProps;
           var html = `
-                    <h3>${meal.mealName}</h3>
-                    <p><strong>Description:</strong> ${meal.description}</p>
-                    <img src="${meal.photo}" alt="${meal.mealName}" class="meal-photo">
-                    <h4>Ingredients:</h4>
-                    <ul class="ingredients-list">
-                        ${meal.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("")}
-                    </ul>
-                    <h4>Recipe:</h4>
-                    <ol class="recipe-steps">
-                        ${meal.recipe.map((step) => `<li>${step}</li>`).join("")}
-                    </ol>
-                    <h4>Shopping Date:</h4>
-                    <p>${meal.shopDate}</p>
-                    <h4>Preparation Date:</h4>
-                    <p>${event.start.toISOString().split("T")[0]}</p>
-                    <h4>Shopping List:</h4>
-                    <ul class="buy-checklist">
-                        ${meal.ingredients
-                          .map(
-                            (ingredient) => `
-                            <li>
-                                <input type="checkbox" id="${ingredient.replace(/\s+/g, "-")}">
-                                <label for="${ingredient.replace(/\s+/g, "-")}">${ingredient}</label>
-                            </li>
-                        `
-                          )
-                          .join("")}
-                    </ul>
-                `;
+            <h3>${meal.mealName}</h3>
+            <p><strong>Description:</strong> ${meal.description}</p>
+            <img src="${meal.photo}" alt="${meal.mealName}" class="meal-photo">
+            <h4>Ingredients:</h4>
+            <ul class="ingredients-list">
+                ${meal.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("")}
+            </ul>
+            <h4>Recipe:</h4>
+            <ol class="recipe-steps">
+                ${meal.recipe.map((step) => `<li>${step}</li>`).join("")}
+            </ol>
+            <h4>Shopping Date:</h4>
+            <p>${meal.shopDate}</p>
+            <h4>Preparation Date:</h4>
+            <p>${event.start.toISOString().split("T")[0]}</p>
+            <h4>Cooking Date:</h4>
+            <p>${meal.cookDate}</p>
+            <h4>Shopping List:</h4>
+            <ul class="buy-checklist">
+                ${meal.ingredients
+                  .map(
+                    (ingredient) => `
+                    <li>
+                        <input type="checkbox" id="${ingredient.replace(/\s+/g, "-")}">
+                        <label for="${ingredient.replace(/\s+/g, "-")}">${ingredient}</label>
+                    </li>
+                `
+                  )
+                  .join("")}
+            </ul>
+          `;
           mealInfo.innerHTML = html;
         }
       });
