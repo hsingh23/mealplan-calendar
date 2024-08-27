@@ -153,8 +153,8 @@
           <div class="meal-card past-meals">
             <h2 property="pastMealsHeader">Past Meals</h2>
             <div id="past-meals-list" mv-list>
-              <div class="past-meal-item" mv-list-item="meals" mv-if="(prepDate <= $today) && (cookDate <= $today)">
-                <strong property="title"></strong> - Cooked on <span property="cookDate"></span>
+              <div class="past-meal-item" mv-list-item="meals">
+                <span mv-if="(date(shopDate) <= $today) && (date(prepDate) <= $today)"> <strong property="title"></strong> - Prep on <span property="prepDate"></span> </span>
               </div>
             </div>
           </div>
